@@ -40,3 +40,7 @@ It reads data from a CSV file and provides responses based on user input.
 ```bash
 git clone <https://github.com/sri-charan04/Inventory-Chatbot/tree/main>
 cd inventory-chatbot
+
+2. **Create Virtual Environment:**
+```bash
+python -m venv venv
