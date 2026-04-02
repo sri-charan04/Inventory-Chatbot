@@ -31,3 +31,4 @@ It reads data from a CSV file and provides responses based on user input.
 ## 📸 Screenshot
 
 ![Inventory Chatbot UI](templates/UI.png)
+![Inventory Chatbot UI](templates/result.png)
