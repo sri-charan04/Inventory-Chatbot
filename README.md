@@ -32,3 +32,11 @@ It reads data from a CSV file and provides responses based on user input.
 
 ![Inventory Chatbot UI](templates/UI.png)
 ![Inventory Chatbot UI](templates/result.png)
+
+
+## ⚙️ Installation
+
+1. **Clone the repository:**
+- ```bash
+- git clone <your-repo-link>
+- cd inventory-chatbot
