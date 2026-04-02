@@ -10,6 +10,7 @@ The Inventory Chatbot is a Flask-based web application that allows users to inte
 
 
 🛠️ Technologies Used
+
 Python
 Flask
 Pandas
