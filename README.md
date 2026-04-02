@@ -28,3 +28,6 @@ It reads data from a CSV file and provides responses based on user input.
 - data.csv
 - templates/index.html
 
+## 📸 Screenshot
+
+![Inventory Chatbot UI](screenshots/app.png)
