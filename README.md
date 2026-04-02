@@ -36,7 +36,7 @@ It reads data from a CSV file and provides responses based on user input.
 
 ## ⚙️ Installation
 
-1. **Run The Application:**
+ **Run The Application:**
 ```bash
 python -m venv venv
 
@@ -45,8 +45,8 @@ venv\Scripts\activate
 source venv/bin/activate
 
 pip install flask pandas
+```
 
-## Result
-- then the application will run in
--http://127.0.0.1:5000/
+## 📄 Results
 
+- You can view the results here [http://127.0.0.1:5000/]
