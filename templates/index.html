@@ -1,0 +1,154 @@
+        <!DOCTYPE html>
+        <html lang="en">
+        <head>
+            <meta charset="UTF-8">
+            <meta name="viewport" content="width=device-width, initial-scale=1.0">
+            <title>Electro Chatbot</title>
+            <style>
+                /* --- CHATBOT UI STYLES (Embedded CSS) --- */
+                body {
+                    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+                    background-color: #f4f7f6;
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    height: 100vh;
+                    margin: 0;
+                }
+
+                .chat-container {
+                    width: 100%;
+                    max-width: 500px;
+                    height: 80vh;
+                    background: white;
+                    border-radius: 10px;
+                    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+                    display: flex;
+                    flex-direction: column;
+                    overflow: hidden;
+                }
+
+                .chat-header {
+                    background-color: #007bff;
+                    color: white;
+                    padding: 15px;
+                    text-align: center;
+                    font-size: 1.2em;
+                    font-weight: 600;
+                }
+
+                .chat-history {
+                    flex-grow: 1;
+                    padding: 20px;
+                    overflow-y: auto;
+                    background-color: #fcfcfc;
+                }
+
+                /* Message Bubble Styling */
+                .message-row {
+                    display: flex;
+                    margin-bottom: 15px;
+                }
+
+                .message-bubble {
+                    max-width: 75%;
+                    padding: 10px 15px;
+                    border-radius: 18px;
+                    line-height: 1.4;
+                    box-shadow: 0 1px 1px rgba(0, 0, 0, 0.08);
+                    word-wrap: break-word;
+                }
+
+                .bot-message .message-bubble {
+                    background-color: #e6f7ff;
+                    color: #333;
+                    border-bottom-left-radius: 2px;
+                    margin-right: auto;
+                }
+                .bot-message .message-bubble strong {
+                    color: #0056b3; /* Highlight bot answers */
+                }
+
+                .user-message {
+                    justify-content: flex-end;
+                }
+                .user-message .message-bubble {
+                    background-color: #28a745; /* Green for user messages */
+                    color: white;
+                    border-bottom-right-radius: 2px;
+                    margin-left: auto;
+                }
+                
+                /* Input area styling */
+                .chat-input-area {
+                    padding: 15px;
+                    border-top: 1px solid #eee;
+                }
+                .chat-input-area form {
+                    display: flex;
+                    gap: 10px;
+                    margin: 0;
+                }
+                .chat-input-area input[type="text"] {
+                    flex-grow: 1;
+                    padding: 10px;
+                    border: 1px solid #ccc;
+                    border-radius: 20px;
+                    font-size: 1em;
+                }
+                .chat-input-area button {
+                    padding: 10px 15px;
+                    background-color: #28a745;
+                    color: white;
+                    border: none;
+                    border-radius: 20px;
+                    cursor: pointer;
+                    font-weight: bold;
+                    transition: background-color 0.3s;
+                }
+                .chat-input-area button:hover {
+                    background-color: #1e7e34;
+                }
+            </style>
+        </head>
+        <body>
+            <div class="chat-container">
+                <div class="chat-header">
+                    Inventory Assistant 🤖
+                </div>
+                <div class="chat-history" id="chatHistory">
+                    <div class="message-row bot-message">
+                        <div class="message-bubble">
+                            Hello! I can answer questions about our inventory. Try asking <b>What is the price of the Laptop?</b> or <b>List the Apparel category</b>.
+                        </div>
+                    </div>
+
+                    {% for chat in history %}
+                        <div class="message-row {% if chat.sender == 'user' %}user-message{% else %}bot-message{% endif %}">
+                            <div class="message-bubble">
+                                {{ chat.message | safe }}
+                            </div>
+                        </div>
+                    {% endfor %}
+                </div>
+                <div class="chat-input-area">
+                    <form method="POST" action="/">
+                        <input 
+                            type="text" 
+                            name="query_box" 
+                            placeholder="Type your question..." 
+                            required
+                        >
+                        <input type="hidden" name="history" value="{{ history_json }}">
+                        <button type="submit">Send</button>
+                    </form>
+                </div>
+            </div>
+            
+            <script>
+                // Auto-scroll to the latest message when the page loads
+                const historyDiv = document.getElementById('chatHistory');
+                historyDiv.scrollTop = historyDiv.scrollHeight;
+            </script>
+        </body>
+        </html>
