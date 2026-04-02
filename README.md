@@ -36,11 +36,12 @@ It reads data from a CSV file and provides responses based on user input.
 
 ## ⚙️ Installation
 
-1. **Clone the repository:**
-```bash
-git clone <https://github.com/sri-charan04/Inventory-Chatbot/tree/main>
-cd inventory-chatbot
-
-2. **Create Virtual Environment:**
+1. **Run The Application:**
 ```bash
 python -m venv venv
+
+venv\Scripts\activate
+
+source venv/bin/activate
+
+pip install flask pandas
