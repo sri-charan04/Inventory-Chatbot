@@ -16,10 +16,10 @@ Flask
 Pandas
 HTML (Templates)
 
-
 📁 Project Structure
 inventory Chatbot/
 │── app.py                # Main Flask application
 │── data.csv              # Inventory dataset
 │── templates/            # HTML templates
 │── venv/                 # Virtual environment (optional)
+
