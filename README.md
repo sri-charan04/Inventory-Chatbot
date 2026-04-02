@@ -38,5 +38,5 @@ It reads data from a CSV file and provides responses based on user input.
 
 1. **Clone the repository:**
 ```bash
-git clone <your-repo-link>
+git clone <https://github.com/sri-charan04/Inventory-Chatbot/tree/main>
 cd inventory-chatbot
